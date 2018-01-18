@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProductsEntities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'productsdb-develop.dbo.ProductDecorationLocation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ProductDecorationLocation">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="DecorationLocation" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="DecorationLocation" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateCreatedUtc" Type="datetime2" Precision="3" Nullable="false" />
+          <Property Name="DateEditedUtc" Type="datetime2" Precision="3" Nullable="false" />
+          <Property Name="SKU" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ImageUrlBack" Type="nvarchar" MaxLength="256" />
+          <Property Name="ImageUrlFront" Type="nvarchar" MaxLength="256" />
+          <Property Name="ImageUrlName" Type="nvarchar" MaxLength="256" />
+          <Property Name="ImageUrlSide" Type="nvarchar" MaxLength="256" />
+          <Property Name="Size" Type="nvarchar" MaxLength="16" />
+          <Property Name="DecorationMethod" Type="int" Nullable="false" />
+          <Property Name="FloodColor" Type="nvarchar" MaxLength="20" />
+          <Property Name="ColorGroup" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="PersonalizationVariant" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ProductDecorationLocation_Product">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="ProductDecorationLocation" Type="Self.ProductDecorationLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductDecorationLocation">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProductsEntitiesStoreContainer">
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductDecorationLocation" EntityType="Self.ProductDecorationLocation" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProductDecorationLocation].[ProductId] AS [ProductId], 
+    [ProductDecorationLocation].[DecorationLocation] AS [DecorationLocation]
+    FROM [dbo].[ProductDecorationLocation] AS [ProductDecorationLocation]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_ProductDecorationLocation_Product" Association="Self.FK_ProductDecorationLocation_Product">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductDecorationLocation" EntitySet="ProductDecorationLocation" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProductsEntities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateCreatedUtc" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateEditedUtc" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Size" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="DecorationMethod" Type="ProductsEntities.DecorationMethodEnum" Nullable="false" />
+          <Property Name="FloodColor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BrandName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ColorGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ImageUrlBack" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ImageUrlFront" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ImageUrlName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ImageUrlSide" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ProductDecorationLocations" Relationship="ProductsEntities.FK_ProductDecorationLocation_Product" FromRole="Product" ToRole="ProductDecorationLocation" />
+          <Property Name="PersonalizationVariant" Type="ProductsEntities.PersonalizationVariantEnum" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ProductsGeneratedContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="ProductDecorationLocations" EntityType="ProductsEntities.ProductDecorationLocation" />
+          <AssociationSet Name="FK_ProductDecorationLocation_Product" Association="ProductsEntities.FK_ProductDecorationLocation_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductDecorationLocation" EntitySet="ProductDecorationLocations" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ProductDecorationLocation">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="DecorationLocation" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="DecorationLocation" Type="ProductsEntities.DecorationLocationEnum" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="ProductsEntities.FK_ProductDecorationLocation_Product" FromRole="ProductDecorationLocation" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK_ProductDecorationLocation_Product">
+          <End Type="ProductsEntities.Product" Role="Product" Multiplicity="1" />
+          <End Type="ProductsEntities.ProductDecorationLocation" Role="ProductDecorationLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductDecorationLocation">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="DecorationLocationEnum" a:ExternalTypeName="Enums.DecorationLocationEnum" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EnumType Name="DecorationMethodEnum" a:ExternalTypeName="Enums.DecorationMethodEnum" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EnumType Name="PersonalizationVariantEnum" a:ExternalTypeName="Enums.PersonalizationVariantEnum" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProductsEntitiesStoreContainer" CdmEntityContainer="ProductsGeneratedContext">
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="ProductsEntities.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="PersonalizationVariant" ColumnName="PersonalizationVariant" />
+                <ScalarProperty Name="ImageUrlSide" ColumnName="ImageUrlSide" />
+                <ScalarProperty Name="ImageUrlName" ColumnName="ImageUrlName" />
+                <ScalarProperty Name="ImageUrlFront" ColumnName="ImageUrlFront" />
+                <ScalarProperty Name="ImageUrlBack" ColumnName="ImageUrlBack" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ColorGroup" ColumnName="ColorGroup" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DateCreatedUtc" ColumnName="DateCreatedUtc" />
+                <ScalarProperty Name="DateEditedUtc" ColumnName="DateEditedUtc" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="DecorationMethod" ColumnName="DecorationMethod" />
+                <ScalarProperty Name="FloodColor" ColumnName="FloodColor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductDecorationLocations">
+            <EntityTypeMapping TypeName="ProductsEntities.ProductDecorationLocation">
+              <MappingFragment StoreEntitySet="ProductDecorationLocation">
+                <ScalarProperty Name="DecorationLocation" ColumnName="DecorationLocation" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

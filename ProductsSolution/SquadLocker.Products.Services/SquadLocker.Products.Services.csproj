@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net47</TargetFramework>
+    <OutputTypeEx>library</OutputTypeEx>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SquadLocker.Products.Data\SquadLocker.Products.Data.csproj" />
+  </ItemGroup>
+
+</Project>

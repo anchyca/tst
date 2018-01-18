@@ -1,0 +1,77 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7": {
+      "SquadLocker.Products.Data/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/SquadLocker.Products.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SquadLocker.Products.Data.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SquadLocker.Products.Data/1.0.0": {
+      "type": "project",
+      "path": "../SquadLocker.Products.Data/SquadLocker.Products.Data.csproj",
+      "msbuildProject": "../SquadLocker.Products.Data/SquadLocker.Products.Data.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7": [
+      "SquadLocker.Products.Data >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Ankica\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Ankica\\Downloads\\squadlocker-product-catalog-develop\\squadlocker-product-catalog-develop\\ProductsSolution\\SquadLocker.Products.Services\\SquadLocker.Products.Services.csproj",
+      "projectName": "SquadLocker.Products.Services",
+      "projectPath": "C:\\Users\\Ankica\\Downloads\\squadlocker-product-catalog-develop\\squadlocker-product-catalog-develop\\ProductsSolution\\SquadLocker.Products.Services\\SquadLocker.Products.Services.csproj",
+      "packagesPath": "C:\\Users\\Ankica\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ankica\\Downloads\\squadlocker-product-catalog-develop\\squadlocker-product-catalog-develop\\ProductsSolution\\SquadLocker.Products.Services\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Ankica\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net47"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net47": {
+          "projectReferences": {
+            "C:\\Users\\Ankica\\Downloads\\squadlocker-product-catalog-develop\\squadlocker-product-catalog-develop\\ProductsSolution\\SquadLocker.Products.Data\\SquadLocker.Products.Data.csproj": {
+              "projectPath": "C:\\Users\\Ankica\\Downloads\\squadlocker-product-catalog-develop\\squadlocker-product-catalog-develop\\ProductsSolution\\SquadLocker.Products.Data\\SquadLocker.Products.Data.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net47": {}
+    }
+  }
+}

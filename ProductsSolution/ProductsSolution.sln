@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SquadLocker.Products.Database", "SquadLocker.Products.Database\SquadLocker.Products.Database.sqlproj", "{98D47958-C32C-489C-ACB1-688CFA04AA30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Databases", "Databases", "{56966188-DF17-4BC7-B3CA-8608732C6E21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{921B159F-AE58-4DB8-AB2F-BA01FE204298}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AE05584B-FAAE-4D07-8CD9-EC50D96D635E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{AFFEBE9A-08DA-4D7D-82C6-A1D3AFFD94C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquadLocker.Products.Data", "SquadLocker.Products.Data\SquadLocker.Products.Data.csproj", "{06C1356D-4AC5-4F43-9B61-969A911B8C19}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SquadLocker.Products.Web.Api", "SquadLocker.Products.Web.Api\SquadLocker.Products.Web.Api.csproj", "{A53E8B1F-248B-4C84-8DAC-7B4EEAC49593}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SquadLocker.Products.Services", "SquadLocker.Products.Services\SquadLocker.Products.Services.csproj", "{86285AF4-89EB-40EA-9606-795C62A82C66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{37CD93F4-165F-40F7-BA5E-B2BB609439F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SquadLocker.Common", "..\submodule-squadlocker-dotnet-common\DotNetCommonSolution\SquadLocker.Common\SquadLocker.Common.csproj", "{1BAFB505-3163-498A-A770-022C6259BAFA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SquadLocker.Common.Web", "..\submodule-squadlocker-dotnet-common\DotNetCommonSolution\SquadLocker.Common.Web\SquadLocker.Common.Web.csproj", "{61B16857-BD38-4299-A2A6-482EFB967EF3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SquadLocker.Common.Library.Logging", "..\submodule-squadlocker-dotnet-common\DotNetCommonSolution\SquadLocker.Common.Library.Logging\SquadLocker.Common.Library.Logging.csproj", "{03FC34BC-5E7B-477B-9BEF-5BD811C445F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98D47958-C32C-489C-ACB1-688CFA04AA30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98D47958-C32C-489C-ACB1-688CFA04AA30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98D47958-C32C-489C-ACB1-688CFA04AA30}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{98D47958-C32C-489C-ACB1-688CFA04AA30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98D47958-C32C-489C-ACB1-688CFA04AA30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98D47958-C32C-489C-ACB1-688CFA04AA30}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{06C1356D-4AC5-4F43-9B61-969A911B8C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06C1356D-4AC5-4F43-9B61-969A911B8C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06C1356D-4AC5-4F43-9B61-969A911B8C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06C1356D-4AC5-4F43-9B61-969A911B8C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A53E8B1F-248B-4C84-8DAC-7B4EEAC49593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A53E8B1F-248B-4C84-8DAC-7B4EEAC49593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A53E8B1F-248B-4C84-8DAC-7B4EEAC49593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A53E8B1F-248B-4C84-8DAC-7B4EEAC49593}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86285AF4-89EB-40EA-9606-795C62A82C66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86285AF4-89EB-40EA-9606-795C62A82C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86285AF4-89EB-40EA-9606-795C62A82C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86285AF4-89EB-40EA-9606-795C62A82C66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BAFB505-3163-498A-A770-022C6259BAFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BAFB505-3163-498A-A770-022C6259BAFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BAFB505-3163-498A-A770-022C6259BAFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BAFB505-3163-498A-A770-022C6259BAFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B16857-BD38-4299-A2A6-482EFB967EF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B16857-BD38-4299-A2A6-482EFB967EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B16857-BD38-4299-A2A6-482EFB967EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B16857-BD38-4299-A2A6-482EFB967EF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03FC34BC-5E7B-477B-9BEF-5BD811C445F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03FC34BC-5E7B-477B-9BEF-5BD811C445F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03FC34BC-5E7B-477B-9BEF-5BD811C445F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03FC34BC-5E7B-477B-9BEF-5BD811C445F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{98D47958-C32C-489C-ACB1-688CFA04AA30} = {56966188-DF17-4BC7-B3CA-8608732C6E21}
+		{06C1356D-4AC5-4F43-9B61-969A911B8C19} = {921B159F-AE58-4DB8-AB2F-BA01FE204298}
+		{A53E8B1F-248B-4C84-8DAC-7B4EEAC49593} = {AFFEBE9A-08DA-4D7D-82C6-A1D3AFFD94C0}
+		{86285AF4-89EB-40EA-9606-795C62A82C66} = {921B159F-AE58-4DB8-AB2F-BA01FE204298}
+		{37CD93F4-165F-40F7-BA5E-B2BB609439F1} = {921B159F-AE58-4DB8-AB2F-BA01FE204298}
+		{1BAFB505-3163-498A-A770-022C6259BAFA} = {37CD93F4-165F-40F7-BA5E-B2BB609439F1}
+		{61B16857-BD38-4299-A2A6-482EFB967EF3} = {37CD93F4-165F-40F7-BA5E-B2BB609439F1}
+		{03FC34BC-5E7B-477B-9BEF-5BD811C445F8} = {37CD93F4-165F-40F7-BA5E-B2BB609439F1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE8CA998-0925-4371-86C7-06DFB68661A6}
+	EndGlobalSection
+EndGlobal
